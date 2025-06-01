@@ -55,5 +55,7 @@ This project was helpful for improving my frontend skills. It was simple but ver
 
 
 #output img
-
-
+![Image](https://github.com/user-attachments/assets/8006af82-fab9-4934-a9c5-168350135f78)
+![Image](https://github.com/user-attachments/assets/8d24b527-14b1-4a38-add7-5e3d44af4801)
+![Image](https://github.com/user-attachments/assets/da2521bc-02e6-4821-b74f-b3a71dd41314)
+![Image](https://github.com/user-attachments/assets/7c7c686b-09be-4ad1-8293-92819a472df6)
