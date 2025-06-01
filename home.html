@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live data</title>
+</head>
+<style>
+    
+      body{
+        background-color: rgb(125, 85, 235);
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+      }
+      button{
+        padding: 10px;
+        background-color: #f5faf5;
+        margin: 20px;
+        font-size: larger;
+        border-radius: 20px;
+      }
+      button:hover{
+        background-color: #141414;
+        cursor: pointer;
+        color: white;
+        padding: 15px;
+        transition: 0.4s
+      }
+@media (max-width: 600px) {
+  .container {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.6rem;
+  }
+}
+</style>
+<body>
+    <div class="container">
+  <h1>check weather,news,date</h1>
+  <h2>Click any button to cheack data</h2>
+  <button id="weather">Weather</button>
+  <button id="news">News</button>
+  <button id="date">Date</button>
+</div>
+</body>
+<script>
+    document.getElementById('weather').addEventListener('click', function() {
+        window.location.href = 'weather.html';
+    });
+
+    document.getElementById('news').addEventListener('click', function() {
+        window.location.href = 'news.html';
+    });
+
+    document.getElementById('date').addEventListener('click', function() {
+        window.location.href = 'date.html';
+    });
+</script>
+</html>

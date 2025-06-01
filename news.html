@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(125, 85, 235);
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+    }
+    button{
+        padding: 10px;
+        background-color: #f5faf5;
+        margin: 20px;
+        font-size: larger;
+        border-radius: 20px;
+    }
+    button:hover{
+        background-color: #141414;
+        cursor: pointer;
+        color: white;
+        padding: 15px;
+        transition: 0.4s
+    }
+    @media (max-width: 600px) {
+  .container {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.6rem;
+  }
+}
+</style>
+<body>
+    <h1>Today's letest global news is here </h1>
+    <div id="news"></div>
+    <button id="backbtn">Back</button>
+</body>
+<script>
+     const backBtn = document.getElementById('backbtn');
+    backBtn.addEventListener('click', function() {
+        window.location.href = 'home.html';
+    }); 
+         const newsApiKey = '48ab1ebff81c4b59935f9a862191bb69'; 
+const newsUrl = `https://newsapi.org/v2/top-headlines?language=en&pageSize=5&apiKey=${newsApiKey}`;
+
+fetch(newsUrl)
+  .then(res => res.json())
+  .then(data => {
+    const newsDiv = document.getElementById('news');
+    let html = '';
+    data.articles.forEach(article => {
+      html += `
+        <div style="margin-bottom: 1rem; padding: 1rem; border-bottom: 1px solid #ccc;">
+          <h3>${article.title}</h3>
+          <p>${article.description || 'No description available.'}</p>
+          <a href="${article.url}" target="_blank">Read more</a>
+        </div>
+      `;
+    });
+    newsDiv.innerHTML = html;
+  })
+  .catch(err => {
+    document.getElementById('news').innerHTML = '<p>Failed to load news.</p>';
+    console.error('News fetch error:', err);
+  });
+    
+
+</script>
+</html>
